@@ -20,6 +20,11 @@ var number= confirm ("do you want to include numbers?");
 var lengthint= parseInt(length);
 
   if (length >8 && length <128){
+
+  for (var i = 0; i < passwordLength; i++) {
+    var userChoices = userChoices[Math.floor(Math.random() * userChoices.length)];
+    console.log(userChoices, lengthint);
+}
    
    //01
    if ((uppercase===false)&&(lowercase===false)&&(number===false)&&(special===true)){
@@ -111,13 +116,6 @@ var lengthint= parseInt(length);
     console.log("incorrect option");
     return;
   }
-}
-
-function generatePassword()
-for (var i = 0; i < passwordLength; i++) {
-  var userChoices = userChoices[Math.floor(Math.random() * userChoices.length)];
-  console.log(userChoices, lengthint);
-}
 }
 
 
