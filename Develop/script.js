@@ -9,7 +9,7 @@ var number= ["0","1","2","3","4","5","6","7","8","9"]
 var numberLength= 10;
 var special= ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 var speciallength= 33;
-var userChoice= []
+var userChoices= []
 
 function generatePassword(){
 var length= prompt ("How many characters do you want your password to be? Choose between 8 and 128.");
@@ -23,98 +23,102 @@ var lengthint= parseInt(length);
    
    //01
    if ((uppercase===false)&&(lowercase===false)&&(number===false)&&(special===true)){
-     var characters = special;
-     var characterlength = specialLength;
+     var userChoices = special;
+     var userChoiceslength = specialLength;
      console.log(userChoices); 
    }
    //02
    else if ((uppercase===false)&&(lowercase===false)&&(number===true)&&(special===false)){
-    var characters = number;
-    var characterlength = numberLength; 
+    var userChoices = number;
+    var userChoiceslength = numberLength; 
     console.log(userChoices);
    }
    //03
    else if ((uppercase===false)&&(lowercase===true)&&(number===false)&&(special===false)){
-    var characters = lowercase;
+    var userChoices = lowercase;
     var characterlength = letterLength;
     console.log(userChoices);
    }
    //04
    else if ((uppercase===true)&&(lowercase===false)&&(number===false)&&(special===false)){
-    var characters = uppercase;
-    var characterlength = letterLength;
+    var userChoices = uppercase;
+    var userChoiceslength = letterLength;
     console.log(userChoices);
    }
    //05
    else if ((uppercase===true)&&(lowercase===true)&&(number===false)&&(special===false)){
-     var characters = uppercase.concat(lowercase);
-     var characterlength = letterlength;
+     var userChoices = uppercase.concat(lowercase);
+     var userChoiceslength = letterlength;
      console.log(userChoices);
    }
    //06
    else if ((uppercase===true)&&(lowercase===false)&&(number===true)&&(special===false)){
-    var characters = uppercase.concat(number);
-    var characterlength = letterlength + numberLength;
+    var userChoices = uppercase.concat(number);
+    var userChoiceslength = letterlength + numberLength;
     console.log(userChoices);
    }
    //07
    else if ((uppercase===true)&&(lowercase===false)&&(number===false)&&(special===true)){
-    var characters = uppercase.concat(special);
-    var characterlength = letterlength + speciallength;
+    var userChoices = uppercase.concat(special);
+    var userChoiceslength = letterlength + speciallength;
     console.log(userChoices);
    }
    //08
    else if ((uppercase===true)&&(lowercase===true)&&(number===true)&&(special===false)){
-    var characters = uppercase.concat(lowercase,number);
-    var characterlength = letterlength + numberLength;
+    var userChoices = uppercase.concat(lowercase,number);
+    var userChoiceslength = letterlength + numberLength;
     console.log(userChoices);
    }
    //09
    else if ((uppercase===true)&&(lowercase===true)&&(number===true)&&(special===true)){
-    var characters = uppercase.concat(lowercase,number,special);
-    var characterlength = letterlength + numberLength + speciallength;
+    var userChoices = uppercase.concat(lowercase,number,special);
+    var userChoiceslength = letterlength + numberLength + speciallength;
     console.log(userChoices);
    }
    //10
    else if ((uppercase===false)&&(lowercase===true)&&(number===true)&&(special===false)){
-    var characters = number.concat(lowercase);
-    var characterlength = letterlength + numberLength;
+    var userChoices = number.concat(lowercase);
+    var userChoiceslength = letterlength + numberLength;
     console.log(userChoices);
    }
    //11
    else if ((uppercase===false)&&(lowercase===true)&&(number===false)&&(special===true)){
-    var characters = special.concat(lowercase);
-    var characterlength = letterlength + speciallength;
+    var userChoices = special.concat(lowercase);
+    var userChoiceslength = letterlength + speciallength;
     console.log(userChoices);
    }
    //12
    else if ((uppercase===false)&&(lowercase===true)&&(number===true)&&(special===true)){
-    var characters = number.concat(lowercase,special);
-    var characterlength = letterlength + numberLength + speciallength;
+    var userChoices = number.concat(lowercase,special);
+    var userChoiceslength = letterlength + numberLength + speciallength;
     console.log(userChoices);
    }
   //13
    else if ((uppercase===false)&&(lowercase===false)&&(number===true)&&(special===true)){
-    var characters = number.concat(special);
-    var characterlength = numberlength + speciallength;
+    var userChoices = number.concat(special);
+    var userChoiceslength = numberlength + speciallength;
     console.log(userChoices);
    }
    //14
    else if ((uppercase===true)&&(lowercase===true)&&(number===false)&&(special===true)){
-    var characters = uppercase.concat (lowercase,special);
-    var characterlength = letterlength + speciallength;
+    var userChoices = uppercase.concat (lowercase,special);
+    var userChoiceslength = letterlength + speciallength;
     console.log(userChoices);
    }
   }
 
   else {
-    console.log("incorrect option")
+    console.log("incorrect option");
+    return;
   }
-  
- 
 }
 
-
+function generatePassword()
+for (var i = 0; i < passwordLength; i++) {
+  var userChoices = userChoices[Math.floor(Math.random() * userChoices.length)];
+  console.log(userChoices, lengthint);
+}
+}
 
 
 // Write password to the #password input
@@ -125,8 +129,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
